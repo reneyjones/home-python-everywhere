@@ -1,4 +1,3 @@
-
 # A very simple Flask Hello World app for you to get started with...
 
 from flask import Flask, render_template, redirect, request, url_for
@@ -37,3 +36,7 @@ def index():
     db.session.add(comment)
     db.session.commit()
     return redirect(url_for('index'))
+
+@app.route("/login/")
+def login():
+    return render_template("login_page.html")
